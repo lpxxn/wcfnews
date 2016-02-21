@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfNews", "WcfNews\WcfNews.csproj", "{3E3C7D16-6182-4262-B5B0-9A730D4E7DCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewImplementation", "NewImplementation\NewImplementation.csproj", "{6AE73B5F-5529-4680-B9E5-DD708647577C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3E3C7D16-6182-4262-B5B0-9A730D4E7DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E3C7D16-6182-4262-B5B0-9A730D4E7DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E3C7D16-6182-4262-B5B0-9A730D4E7DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE73B5F-5529-4680-B9E5-DD708647577C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE73B5F-5529-4680-B9E5-DD708647577C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE73B5F-5529-4680-B9E5-DD708647577C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE73B5F-5529-4680-B9E5-DD708647577C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
