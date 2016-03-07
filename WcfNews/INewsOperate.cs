@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace WcfNews
 {
-    [ServiceContract(Namespace = "INewsOperate")]
+    [ServiceContract]
     public interface INewsOperate
     {
         [OperationContract,

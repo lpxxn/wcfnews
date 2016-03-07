@@ -31,7 +31,7 @@ namespace UnitTestProject1
         {
             //http://stackoverflow.com/questions/9734941/upload-file-from-html-form-multipart-form-data-to-wcf-rest-service-as-a-stream
 
-            var image = System.Drawing.Image.FromFile("C:\\Users\\Guest\\Desktop\\sample.png");
+            var image = System.Drawing.Image.FromFile("C:\\1.png");
             MemoryStream ms = new MemoryStream();
             image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             byte[] imageArray = ms.ToArray();
@@ -51,7 +51,7 @@ namespace UnitTestProject1
 
             // http://restsharp.org/
             var client = new RestClient();
-            client.BaseUrl = new Uri("http://localhost/SampleService/Service1.svc");
+            client.BaseUrl = new Uri("http://LocalHost:10001/UpLoadImage");
             var request = new RestRequest(Method.POST);
             if (requestBody != null)
                 request.AddParameter("objAttachmentRequestDto", requestBody);

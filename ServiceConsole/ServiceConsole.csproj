@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NewImplementation\NewImplementation.csproj">
+      <Project>{6ae73b5f-5529-4680-b9e5-dd708647577c}</Project>
+      <Name>NewImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfNews\WcfNews.csproj">
+      <Project>{3e3c7d16-6182-4262-b5b0-9a730d4e7dcf}</Project>
+      <Name>WcfNews</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
