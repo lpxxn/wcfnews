@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -13,13 +14,25 @@ namespace NewImplementation
     {
         public bool UpLoadImage(Stream stream)
         {
-            throw new NotImplementedException();
+            MultipartParser parser = new MultipartParser(stream);
+            if (parser.Success)
+            {
+                foreach (var content in parser.MyContents)
+                {
+                    // Observe your string here which is a serialized version of your file or the object being passed. Based on the string do the necessary action.
+                    string str = Encoding.UTF8.GetString(content.Data);
+                }
+            }
+
+            return true;
+            //return new AttachmentRequestDto();
         }
 
        
     }
     public class MultipartParser
     {
+        private byte[] requestData;
         public MultipartParser(Stream stream)
         {
             this.Parse(stream, Encoding.UTF8);
@@ -37,6 +50,7 @@ namespace NewImplementation
 
             // Read the stream into a byte array
             byte[] data = ToByteArray(stream);
+            requestData = data;
 
             // Copy to a string for header parsing
             string content = encoding.GetString(data);
@@ -87,8 +101,12 @@ namespace NewImplementation
             this.Success = false;
 
             // Read the stream into a byte array
-            byte[] data = ToByteArray(stream);
-
+            byte[] data;
+            if (requestData.Length == 0)
+            {
+                data = ToByteArray(stream);
+            }
+            else { data = requestData; }
             // Copy to a string for header parsing
             string content = encoding.GetString(data);
 
@@ -237,5 +255,16 @@ namespace NewImplementation
         public byte[] Data { get; set; }
         public string PropertyName { get; set; }
         public string StringData { get; set; }
+    }
+
+    [DataContract]
+    public class AttachmentRequestDto
+    {
+        [DataMember]
+        public string Title { get; set; }
+        [DataMember]
+        public string Description { get; set; }
+        [DataMember]
+        public string FileName { get; set; }
     }
 }
